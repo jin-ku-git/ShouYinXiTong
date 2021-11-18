@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:binding="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <import type="com.youwu.shouyinxitong.ui.order.SellOrderListItemViewModel" />
+
+        <variable
+            name="viewModel"
+            type="SellOrderListItemViewModel" />
+    </data>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@{viewModel.entity.select==1?@color/colorPrimarys:@color/white}"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    binding:onClickCommand="@{viewModel.itemClick}"
+   >
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/order_sn"
+                style="@style/font_white_14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/dp_10"
+                android:paddingTop="@dimen/dp_4"
+                android:paddingBottom="@dimen/dp_4"
+                android:textColor="@{viewModel.entity.select==1?@color/white:@color/black}"
+                android:text="@{viewModel.entity.order_id}" />
+
+            <TextView
+                android:visibility="@{viewModel.entity.pay_type==6?viewModel.VISIBLE:viewModel.GONE}"
+                android:id="@+id/tv_pay_type"
+                style="@style/font_white_14"
+                android:layout_width="wrap_content"
+                android:textSize="10sp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@{viewModel.entity.select==1?@drawable/line_white_2:@drawable/line_orange_2}"
+                android:paddingLeft="2dp"
+                android:paddingTop="1dp"
+                android:paddingRight="2dp"
+                android:paddingBottom="1dp"
+                android:textColor="@{viewModel.entity.select==1?@color/white:@color/colorPrimarys}"
+                android:text="外卖" />
+            <TextView
+                android:visibility="@{viewModel.entity.order_status==3?viewModel.VISIBLE:viewModel.GONE}"
+                android:id="@+id/tv_order_state"
+                style="@style/font_white_14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:textSize="10sp"
+                android:background="@{viewModel.entity.select==1?@drawable/line_white_2:@drawable/line_orange_2}"
+                android:textColor="@{viewModel.entity.select==1?@color/white:@color/colorPrimarys}"
+                android:paddingLeft="2dp"
+                android:paddingTop="1dp"
+                android:paddingRight="2dp"
+                android:paddingBottom="1dp"
+                android:text="已反结账" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/number"
+            style="@style/font_white_14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/dp_10"
+            android:paddingTop="@dimen/dp_4"
+            android:paddingBottom="@dimen/dp_4"
+            android:text=""
+            android:visibility="gone" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/creat_time"
+            style="@style/font_white_14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/dp_10"
+            android:paddingTop="@dimen/dp_4"
+            android:layout_weight="1"
+            android:paddingBottom="@dimen/dp_4"
+            android:textColor="@{viewModel.entity.select==1?@color/white:@color/black}"
+            android:text="@{viewModel.entity.order_start_time}" />
+        <TextView
+            android:id="@+id/pay_money"
+            style="@style/font_white_24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp_10"
+            android:textColor="@{viewModel.entity.select==1?@color/white:@color/black}"
+            android:text="@{'￥'+viewModel.entity.order_price}" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>
+</layout>

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="com.youwu.shouyinxitong.viewpager.ViewPagerItemViewModel" />
+        <import type="android.view.View"/>
+
+        <variable
+            name="viewModel"
+            type="ViewPagerItemViewModel" />
+
+        <import type="me.goldze.mvvmhabit.binding.viewadapter.recyclerview.LayoutManagers" />
+
+        <import type="me.goldze.mvvmhabit.binding.viewadapter.recyclerview.LineManagers" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:binding="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?android:selectableItemBackground"
+        android:gravity="center"
+        android:overScrollMode="never"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+
+          >
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="7"
+                android:orientation="horizontal">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/goods_type_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    binding:itemBinding="@{viewModel.itemBinding}"
+                    binding:items="@{viewModel.observableList}"
+                    binding:layoutManager="@{LayoutManagers.typeHCount_8()}"
+                    binding:lineManager="@{LineManagers.horizontal()}"
+                    android:overScrollMode="never"
+                    />
+
+
+                <!-- 解决ViewPager2与RecyclerView的滑动冲突 -->
+                <com.youwu.shouyinxitong.viewpager.NestedScrollableHost
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/goods_type_list"
+                    android:layout_marginTop="-2dp"
+                    >
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/goods_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:background="#EEEEEE"
+                    android:paddingRight="10dp"
+                    binding:itemBinding="@{viewModel.itemBindingShopping}"
+                    binding:items="@{viewModel.goodsList}"
+                    binding:layoutManager="@{LayoutManagers.typeHCount_4()}"
+                    binding:lineManager="@{LineManagers.vertical()}"
+                    android:overScrollMode="never"
+                    />
+                </com.youwu.shouyinxitong.viewpager.NestedScrollableHost>
+
+
+                <LinearLayout
+                    android:id="@+id/search_goods_result_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/background"
+                    android:orientation="vertical"
+                    binding:onClickCommand="@{viewModel.onItemClick}"
+                    android:visibility="@{viewModel.getPosition()==1?View.VISIBLE:View.GONE}">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginLeft="@dimen/dp_4"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/dp_10"
+                            android:layout_weight="7"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+                            android:gravity="center_vertical">
+
+                            <EditText
+                                android:id="@+id/edit_search"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:background="@null"
+                                android:drawableLeft="@mipmap/icon_new_search"
+                                android:drawablePadding="@dimen/dp_10"
+                                android:gravity="center"
+                                android:imeOptions="actionSearch"
+                                android:hint="请输入拼音搜索商品"
+                                android:inputType="textUri"
+                                android:text="@={viewModel.EditBean}"
+                                android:padding="@dimen/dp_10"
+                                android:textSize="@dimen/sp_14" />
+
+
+                            <TextView
+                                android:id="@+id/cancel_search"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/cir_dark_gray"
+                                android:paddingLeft="20dp"
+                                android:paddingTop="@dimen/dp_10"
+                                android:paddingRight="20dp"
+                                android:paddingBottom="@dimen/dp_10"
+                                android:text="搜索"
+                                android:textColor="@color/text_black"
+                                android:textSize="@dimen/sp_14"
+                                binding:onClickCommand="@{viewModel.SearchonClick}"
+                           />
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/dialog_bg"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:padding="@dimen/dp_10"
+                            android:text="商品名称"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/sp_16" />
+
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="100dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:padding="@dimen/dp_10"
+                            android:text="单价"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/sp_16" />
+
+                    </LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/search_goods_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignStart="@+id/search_goods_result_layout"
+                        android:layout_alignBottom="@+id/search_goods_result_layout"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:layout_weight="1"
+                        android:background="#EEEEEE"
+                        android:paddingRight="10dp"
+                        binding:itemBinding="@{viewModel.itemBindingShoppings}"
+                        binding:items="@{viewModel.goodsLists}"
+                        binding:layoutManager="@{LayoutManagers.typeHCount_4()}"
+                        binding:lineManager="@{LineManagers.vertical()}"
+
+                        />
+
+                    <com.youwu.shouyinxitong.view.MyCustKeybords
+                        android:id="@+id/custom_keyboard"
+                        android:layout_width="match_parent"
+                        android:visibility="gone"
+                        android:layout_height="250dp" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

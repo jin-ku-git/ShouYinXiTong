@@ -1,0 +1,104 @@
+[
+  {
+    "type": 1,
+    "peimission": 1,
+    "name": "系统设置",
+    "pic": ""
+  },
+  {
+    "type": 2,
+    "peimission": 1,
+    "name": "交接班",
+    "pic": ""
+  },
+  {
+    "type": 3,
+    "peimission": 1,
+    "name": "打开钱箱",
+    "pic": ""
+  },
+  {
+    "type": 4,
+    "peimission": 1,
+    "name": "添加会员",
+    "pic": ""
+  },
+  {
+    "type": 5,
+    "peimission": 1,
+    "name": "销售单据",
+    "pic": ""
+  },
+  {
+    "type": 6,
+    "peimission": 1,
+    "name": "新增商品",
+    "pic": ""
+  },
+  {
+    "type": 7,
+    "peimission": 1,
+    "name": "商品编辑",
+    "pic": ""
+  },
+  {
+    "type": 8,
+    "peimission": 1,
+    "name": "盘点",
+    "pic": ""
+  },
+  {
+    "type": 9,
+    "peimission": 1,
+    "name": "沽清",
+    "pic": ""
+  },
+  {
+    "type": 10,
+    "peimission": 1,
+    "name": "订货申请",
+    "pic": ""
+  },
+  {
+    "type": 11,
+    "peimission": 1,
+    "name": "进货",
+    "pic": ""
+  },
+  {
+    "type": 12,
+    "peimission": 1,
+    "name": "配货确认",
+    "pic": ""
+  },
+  {
+    "type": 13,
+    "peimission": 1,
+    "name": "打印设置",
+    "pic": ""
+  },
+  {
+    "type": 14,
+    "peimission": 1,
+    "name": "备用金收支",
+    "pic": ""
+  },
+  {
+    "type": 15,
+    "peimission": 1,
+    "name": "充值记录",
+    "pic": ""
+  },
+  {
+    "type": 16,
+    "peimission": 1,
+    "name": "销售统计",
+    "pic": ""
+  },
+  {
+    "type": 17,
+    "peimission": 1,
+    "name": "账期订单",
+    "pic": ""
+  }
+]

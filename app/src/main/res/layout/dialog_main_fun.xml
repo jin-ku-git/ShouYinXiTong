@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:background="@color/white"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:background="@color/F5F5F5"
+       >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="功能菜单"
+            android:layout_marginLeft="15dp"
+            android:layout_gravity="center_vertical"
+            android:textColor="#d9000000"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/img_fun_close"
+            android:layout_gravity="right"
+            android:padding="15dp"
+            android:layout_width="@dimen/dp_50"
+            android:layout_marginRight="15dp"
+            android:layout_height="match_parent"
+            android:src="@mipmap/img_fun_close"/>
+
+
+    </FrameLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recy_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="5"
+        tools:listitem="@layout/item_main_fun"
+        tools:itemCount="10" />
+
+</LinearLayout>

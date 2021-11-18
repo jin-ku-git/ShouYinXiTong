@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TwinklingRefreshLayout">
+        <attr name="tr_wave_height" format="dimension" />
+        <attr name="tr_head_height" format="dimension" />
+        <attr name="tr_bottom_height" format="dimension" />
+        <attr name="tr_overscroll_height" format="dimension" />
+        <attr name="tr_enable_loadmore" format="boolean" />
+        <attr name="tr_pureScrollMode_on" format="boolean" />
+        <attr name="tr_show_overlay_refreshview" format="boolean" />
+        <attr name="tr_headerView" format="dimension" />
+        <attr name="tr_bottomView" format="dimension" />
+        <attr name="onRefreshCommand" format="reference" />
+        <attr name="onLoadMoreCommand" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="NestFullGridView">
+        <!--一列有多少个Item-->
+        <attr name="gridSpan" format="integer" />
+        <!--水平间距-->
+        <attr name="gridHorizontalSpace" format="dimension" />
+        <!--垂直间距-->
+        <attr name="gridVerticalSpace" format="dimension" />
+        <!--最大子View的个数-->
+        <attr name="gridMaxItem" format="integer" />
+        <attr name="gridIsSqaure" format="boolean" />
+
+    </declare-styleable>
+
+    <declare-styleable name="MyCustKeybords">
+        <attr name="needSystem" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="ProgressWheel">
+        <attr name="matProg_progressIndeterminate" format="boolean" />
+        <attr name="matProg_barColor" format="color" />
+        <attr name="matProg_rimColor" format="color" />
+        <attr name="matProg_rimWidth" format="dimension" />
+        <attr name="matProg_spinSpeed" format="float" />
+        <attr name="matProg_barSpinCycleTime" format="integer" />
+        <attr name="matProg_circleRadius" format="dimension" />
+        <attr name="matProg_fillRadius" format="boolean" />
+        <attr name="matProg_barWidth" format="dimension" />
+        <attr name="matProg_linearProgress" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="YViewPager">
+        <attr name="orientation">
+            <enum name="vertical" value="0"/>
+            <enum name="horizontal" value="1"/>
+        </attr>
+        <attr name="circulatory" format="boolean"/>
+        <attr name="circulationCount" format="integer"/>
+
+    </declare-styleable>
+</resources>

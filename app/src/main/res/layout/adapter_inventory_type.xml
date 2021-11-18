@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:binding="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <import type="com.youwu.shouyinxitong.ui.calculate.InventoryItemViewModel" />
+
+        <variable
+            name="viewModel"
+            type="InventoryItemViewModel" />
+    </data>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+
+    android:background="@{viewModel.entity.currentSelect!=1?@color/colorPrimarys:@color/colorPrimaryQing}"
+    binding:onClickCommand="@{viewModel.itemClick}"
+    android:padding="15dp">
+
+
+    <ImageView
+        android:layout_gravity="center"
+        android:id="@+id/img_add"
+        android:layout_width="@dimen/dp_25"
+        android:layout_height="@dimen/dp_25"
+        android:src="@mipmap/icon_type_add"
+        android:visibility="gone"
+        />
+    <LinearLayout
+        android:id="@+id/layout_normal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+    <View
+        android:id="@+id/flag_view"
+        android:layout_width="7dp"
+        android:layout_height="16dp"
+        android:background="@color/main_hue"
+        android:visibility="gone" />
+
+    <TextView
+
+        android:id="@+id/type_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@={viewModel.entity.name}"
+        android:textColor="@{viewModel.entity.currentSelect!=1?@color/white:@color/colorPrimarys}"
+        android:textSize="16dp" />
+    </LinearLayout>
+</FrameLayout>
+</layout>

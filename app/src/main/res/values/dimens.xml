@@ -1,0 +1,148 @@
+<resources>
+
+
+    <!--设置bottomBar底部的图与文字的间隙-->
+    <dimen name="fixed_height_bottom_padding">5dp</dimen>
+
+    <dimen name="edit_height">45dp</dimen>
+    <dimen name="dp_20">20dp</dimen>
+    <dimen name="dp_25">25dp</dimen>
+    <dimen name="title_height">80dp</dimen>
+    <!--100dp-->
+    <dimen name="progress_icon_width_height">80dp</dimen>
+    <dimen name="line_default">1dp</dimen>
+    <dimen name="radio_button_opt_width">120dp</dimen>
+
+    <dimen name="yw_title_height">80dp</dimen>
+
+
+    <dimen name="yw_opt_login_height">36dp</dimen>
+    <dimen name="yw_margin_8">8dp</dimen>
+    <dimen name="yw_margin_4">4dp</dimen>
+    <dimen name="yw_margin_6">6dp</dimen>
+    <dimen name="yw_margin_16">16dp</dimen>
+    <dimen name="yw_margin_12">12dp</dimen>
+    <dimen name="yw_margin_2">2dp</dimen>
+    <dimen name="yw_margin_18">18dp</dimen>
+    <dimen name="yw_margin_20">20dp</dimen>
+    <dimen name="yw_margin_30">30dp</dimen>
+    <dimen name="yw_margin_24">24dp</dimen>
+    <dimen name="yw_margin_46">46dp</dimen>
+    <dimen name="yw_padding_drawable">4dp</dimen>
+    <dimen name="yw_padding_similer">10dp</dimen>
+    <dimen name="yw_padding_mini">14dp</dimen>
+    <dimen name="yw_padding_small">22dp</dimen>
+    <dimen name="yw_padding_normal">26dp</dimen>
+    <dimen name="yw_padding_big">30dp</dimen>
+
+    <dimen name="yw_margin_mini">12dp</dimen>
+    <dimen name="yw_margin_similer">18dp</dimen>
+    <dimen name="yw_margin_normal">34dp</dimen>
+    <dimen name="yw_margin_big">48dp</dimen>
+    <dimen name="yw_margin_biger">66dp</dimen>
+    <dimen name="yw_margin_huge">96dp</dimen>
+
+    <dimen name="yw_keymap_height">60dp</dimen>
+    <dimen name="yw_txt_size_hug">25sp</dimen>
+    <dimen name="yw_txt_size_biger">20sp</dimen>
+    <dimen name="yw_txt_size_big">18sp</dimen>
+    <dimen name="yw_txt_size_normal">17sp</dimen>
+    <dimen name="yw_txt_size_small">15sp</dimen>
+    <dimen name="yw_txt_size_similer">12sp</dimen>
+    <dimen name="yw_txt_size_mini">10sp</dimen>
+    <dimen name="yw_txt_size_little">8sp</dimen>
+
+    <dimen name="yw_txt_size_8">8sp</dimen>
+    <dimen name="yw_txt_size_10">10sp</dimen>
+    <dimen name="yw_txt_size_12">12sp</dimen>
+    <dimen name="yw_txt_size_14">14sp</dimen>
+    <dimen name="yw_txt_size_16">16sp</dimen>
+    <dimen name="yw_txt_size_18">18sp</dimen>
+    <dimen name="yw_txt_size_20">20sp</dimen>
+    <dimen name="yw_txt_size_22">22sp</dimen>
+    <dimen name="yw_txt_size_40">40sp</dimen>
+    <dimen name="yw_opt_btn_width">100dp</dimen>
+    <dimen name="yw_opt_btn_height">40dp</dimen>
+
+    <dimen name="yw_icon_width_heigh">23dp</dimen>
+
+    <dimen name="yw_arrow_width">11dp</dimen>
+    <dimen name="yw_arrow_height">19dp</dimen>
+
+    <dimen name="yw_pic_width_height">55dp</dimen>
+    <dimen name="yw_pic_width_height_small">45dp</dimen>
+
+    <dimen name="yw_right_opt_small_width">100dp</dimen>
+    <dimen name="yw_right_opt_btn_width">216dp</dimen>
+
+    <dimen name="yw_right_opt_btn_height">42dp</dimen>
+    <dimen name="yw_dialog_opt_btn_widht">104dp</dimen>
+
+    <dimen name="yw_avatar_width_height">90dp</dimen>
+
+    <dimen name="yw_edit_rec_width_height">35dp</dimen>
+
+    <dimen name="yw_keymap_item_width_height">50dp</dimen>
+
+    <dimen name="yw_dialog_width">328dp</dimen>
+    <dimen name="yw_dialog_height">280dp</dimen>
+
+    <dimen name="yw_good_item_height">48dp</dimen>
+
+    <dimen name="yw_edit_height">40dp</dimen>
+    <dimen name="yw_edit_par_height">44dp</dimen>
+
+    <dimen name="yw_opt_btn_small_width">78dp</dimen>
+    <dimen name="yw_opt_btn_small_height">20dp</dimen>
+
+    <dimen name="yw_width_good_num">60dp</dimen>
+
+    <dimen name="yw_max_name_width">200dp</dimen>
+    <dimen name="yw_account_bottome_height">74dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="dp_40">40dp</dimen>
+    <dimen name="dp_50">50dp</dimen>
+    <dimen name="dp_12">12dp</dimen>
+    <dimen name="textsize_big">16sp</dimen>
+    <dimen name="dp_23">23dp</dimen>
+    <dimen name="small_margin">10dp</dimen>
+    <dimen name="dp_18">18dp</dimen>
+    <dimen name="dp_44">44dp</dimen>
+    <dimen name="dp_77">77dp</dimen>
+    <dimen name="dp_160">160dp</dimen>
+
+    <dimen name="dp_1">1dp</dimen>
+    <dimen name="dp_0_1">0.1dp</dimen>
+
+    <dimen name="dp_line">0.5dp</dimen>
+    <dimen name="dp_17">17dp</dimen>
+    <dimen name="dp_2">2dp</dimen>
+    <dimen name="dp_6">6dp</dimen>
+    <dimen name="dp_15">15dp</dimen>
+    <dimen name="dp_11">11dp</dimen>
+    <dimen name="dp_5">5dp</dimen>
+    <dimen name="dp_10">10dp</dimen>
+    <dimen name="dp_14">14dp</dimen>
+
+
+    <dimen name="simill_margin">4dp</dimen>
+
+
+    <dimen name="keymap_height">36dp</dimen>
+    <dimen name="dp_22">22dp</dimen>
+    <dimen name="dp_3">3dp</dimen>
+    <dimen name="dp_71">71dp</dimen>
+    <dimen name="sp_18">18sp</dimen>
+    <dimen name="sp_10">10sp</dimen>
+    <dimen name="dp_80">80dp</dimen>
+
+    <dimen name="key_height">50.0dip</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="activity_handover_margin">50dp</dimen>
+    <dimen name="activity_handover_item_height">65.34dp</dimen>
+
+    <dimen name="customactivityoncrash_error_activity_error_details_text_size">12sp</dimen>
+
+</resources>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <import type="com.youwu.shouyinxitong.ui.applygoods.CommodityItemViewModel" />
+
+        <variable
+            name="viewModel"
+            type="CommodityItemViewModel" />
+    </data>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:text="@{viewModel.entity.commodity_name}"
+            android:textColor="#ffadadac"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_num"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@{viewModel.entity.commodity_number}"
+            android:textColor="#ffadadac"
+            android:textSize="15sp" />
+        <TextView
+            android:id="@+id/tv_cost_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@{viewModel.entity.commodity_primary_price}"
+            android:textColor="#ffadadac"
+            android:textSize="15sp" />
+        <TextView
+            android:id="@+id/tv_total_money"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@{viewModel.entity.commodity_total_price}"
+            android:gravity="center"
+            android:textColor="#ffadadac"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_D8D8D8" />
+
+
+</LinearLayout>
+</layout>

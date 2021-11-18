@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:binding="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.youwu.shouyinxitong.ui.applygoods.ApplyOrderItemViewModel" />
+
+        <variable
+            name="viewModel"
+            type="ApplyOrderItemViewModel" />
+    </data>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@{viewModel.entity.select==1?@color/colorPrimarys:@color/white}"
+    binding:onClickCommand="@{viewModel.itemClick}">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:gravity="center_vertical"
+        android:paddingTop="20dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="20dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tv_state"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@{viewModel.entity.order_status_name}"
+                android:textColor="@{viewModel.entity.select==1?@color/white:@color/black}"
+                android:textSize="14sp" />
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@{viewModel.entity.order_start_time}"
+                android:textColor="@{viewModel.entity.select==1?@color/white:@color/black}"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+
+
+        <TextView
+            android:id="@+id/tv_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{@string/common+(viewModel.getPosition()+1)+@string/piece}"
+            android:textColor="@{viewModel.entity.select==1?@color/white:@color/black}"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_D8D8D8" />
+
+</LinearLayout>
+</layout>

@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/liveness_root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true">
+
+    <RelativeLayout
+        android:id="@+id/videoview_relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <VideoView
+            android:visibility="gone"
+            android:id="@+id/videoview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+
+    <com.youth.banner.Banner
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/show_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/main_hue"
+            android:padding="@dimen/dp_10">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/white_logo" />
+
+            <TextClock
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:format12Hour="yyyy-MM-dd hh:mm:ss"
+                android:format24Hour="yyyy-MM-dd hh:mm:ss"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_16" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="7"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/dialog_bg">
+
+                    <TextView
+                        style="@style/font_hint_14"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:padding="@dimen/dp_10"
+                        android:text="商品名称" />
+
+                    <TextView
+                        style="@style/font_hint_14"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="@dimen/dp_10"
+                        android:text="数量" />
+
+                    <TextView
+                        style="@style/font_hint_14"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="@dimen/dp_10"
+                        android:text="单价" />
+
+                    <TextView
+                        style="@style/font_hint_14"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="@dimen/dp_10"
+                        android:text="单品折扣" />
+
+                    <TextView
+                        style="@style/font_hint_14"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="@dimen/dp_10"
+                        android:text="小计" />
+
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/no_vip_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="@dimen/dp_4"
+                    android:layout_weight="3"
+                    android:background="@drawable/dialog_bg"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <ImageView
+                        android:id="@+id/code_url"
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
+                        android:adjustViewBounds="true" />
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/vip_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="@dimen/dp_4"
+                    android:layout_weight="2"
+                    android:background="@drawable/dialog_bg"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <com.youwu.shouyinxitong.view.CircularImage
+                        android:id="@+id/vip_head_image"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_centerVertical="true"
+                        android:adjustViewBounds="true" />
+
+                    <TextView
+                        android:id="@+id/vip_name"
+                        style="@style/font_black_14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_toRightOf="@+id/vip_head_image"
+                        android:text="111" />
+
+                    <TextView
+                        android:id="@+id/vip_money"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/vip_name"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:layout_toRightOf="@+id/vip_head_image"
+                        android:text="111"
+                        android:textColor="@color/main_hue"
+                        android:textSize="@dimen/sp_14" />
+
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="@dimen/dp_4"
+                    android:layout_weight="5"
+                    android:background="#F6F6F6"
+                    android:gravity="left|top"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:text="整单信息"
+                        android:textSize="14sp"
+                        android:textColor="@color/black"
+                        android:gravity="center|left"/>
+                    <TextView
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_marginRight="@dimen/dp_10"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/gray_a9"/>
+                    <TextView
+                        android:id="@+id/goods_number"
+                        style="@style/font_black_14"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/dp_10"
+                        android:text="共0种 0件" />
+
+                    <TextView
+                        android:id="@+id/tv_total_money"
+                        style="@style/font_black_14"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/dp_10"
+                        android:text="商品原价：￥0.00" />
+
+
+                    <TextView
+                        android:id="@+id/tv_duihuan"
+                        style="@style/font_black_14"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/dp_10"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/tv_zhekou_money"
+                        style="@style/font_black_14"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/dp_10"
+                        android:text="折扣金额：￥0.00" />
+
+                    <TextView
+                        android:id="@+id/tv_discount_money"
+                        style="@style/font_black_14"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/dp_10"
+                        android:text="优惠总价：￥0.00" />
+
+                    <TextView
+                        android:id="@+id/tv_coupon"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/dp_10"
+                        android:text="使用满0减0元饭票"
+                        android:textColor="@color/main_hue"
+                        android:textSize="@dimen/sp_14"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/must_pay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/dp_20"
+                        android:padding="@dimen/dp_10"
+                        android:text="应付：￥0.00"
+                        android:textColor="@color/main_hue"
+                        android:textSize="@dimen/sp_14"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/img_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@mipmap/bg" />
+</RelativeLayout>

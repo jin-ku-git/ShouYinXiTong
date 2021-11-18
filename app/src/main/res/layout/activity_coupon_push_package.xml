@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:binding="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <import type="com.youwu.shouyinxitong.ui.coupon.CouponPushPackageViewModel" />
+        <import type="android.view.View"/>
+
+        <variable
+            name="viewModel"
+            type="CouponPushPackageViewModel" />
+
+        <import type="me.goldze.mvvmhabit.binding.viewadapter.recyclerview.LayoutManagers" />
+
+        <import type="me.goldze.mvvmhabit.binding.viewadapter.recyclerview.LineManagers" />
+    </data>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.youwu.shouyinxitong.ui.coupon.CouponPushPackageActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:id="@+id/layout_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            binding:onClickCommand="@{viewModel.finishonClick}">
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="@dimen/dp_50"
+                android:layout_height="@dimen/dp_50"
+                android:padding="@dimen/dp_15"
+                android:src="@mipmap/icon_left" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="单选优惠券包推送"
+                android:gravity="center"
+                android:textColor="#ff9a9a9a"
+                android:textSize="15sp"
+                />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:visibility="visible"
+        android:id="@+id/recharge_ll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_marginRight="@dimen/dp_80"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="优惠券包名称"
+                android:textSize="16sp"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_marginLeft="60dp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="添加时间"
+                android:textSize="16sp"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:text="详情"
+                android:textSize="16sp"
+                android:gravity="center"/>
+
+            <TextView
+                android:visibility="invisible"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5"
+                android:text="活动有效期"
+                android:textSize="16sp"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/smartrefreshlayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+        <com.scwang.smartrefresh.layout.header.ClassicsHeader
+            style="@style/RefreshStyle"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_marginLeft="10dp"
+                android:id="@+id/recharge_page_listview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                binding:itemBinding="@{viewModel.itemBinding}"
+                binding:items="@{viewModel.CouponPushList}"
+                binding:layoutManager="@{LayoutManagers.typeHCount_1()}"
+                binding:lineManager="@{LineManagers.vertical()}">
+            </androidx.recyclerview.widget.RecyclerView>
+        </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+            <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+                style="@style/RefreshStyle"
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:background="@color/black">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/tv_push"
+            android:layout_width="@dimen/dp_160"
+            android:layout_height="45dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:text="确认推送"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
+</layout>

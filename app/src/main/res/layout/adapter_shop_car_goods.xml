@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="879dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="卡布奇诺咖啡"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp_16" />
+
+                    <TextView
+                        android:id="@+id/buy_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="3"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp_16" />
+
+
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/iv_discount"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@mipmap/icon_discount" />
+
+
+            </FrameLayout>
+            <TextView
+                android:id="@+id/tv_remarks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginTop="5dp"
+                android:text="sdf"
+                android:textColor="@color/color_6F6F6F"
+                android:textSize="@dimen/sp_14" />
+            <TextView
+                android:id="@+id/tv_weightnum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginTop="5dp"
+                android:text="sdf"
+                android:textColor="@color/color_6F6F6F"
+                android:textSize="@dimen/sp_14" />
+            <TextView
+                android:id="@+id/tv_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginTop="5dp"
+                android:text="￥15"
+                android:textColor="@color/red"
+                android:textSize="@dimen/sp_14" />
+            <TextView
+                android:id="@+id/tv_discount_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginTop="5dp"
+                android:text="折扣：-254.1"
+                android:textColor="@color/color_6F6F6F"
+                android:textSize="@dimen/sp_14" />
+            <TextView
+                android:id="@+id/tv_total_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginTop="5dp"
+                android:text="小计：¥2286.9"
+                android:textColor="@color/color_6F6F6F"
+                android:textSize="@dimen/sp_14" />
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/img_item_close"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_40"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:layout_marginTop="@dimen/dp_10"
+            android:src="@mipmap/icon_goods_delete" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/remove"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:padding="@dimen/dp_10"
+            android:src="@mipmap/jian_icon" />
+
+
+        <ImageView
+            android:id="@+id/add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:padding="@dimen/dp_10"
+            android:src="@mipmap/jia_icon" />
+    </LinearLayout>
+
+
+
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/default_bg" />
+
+    </LinearLayout>
+
+    <com.lid.lib.LabelTextView
+        android:id="@+id/lable"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        android:clickable="false"
+        app:label_backgroundColor="#e02020"
+        app:label_distance="12dp"
+        app:label_height="18dp"
+        app:label_orientation="LEFT_TOP"
+        app:label_text="套餐"
+        app:label_textSize="10sp" />
+</FrameLayout>

@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:binding="http://schemas.android.com/apk/res-auto"
+    >
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.youwu.shouyinxitong.ui.login.LoginViewModel" />
+    </data>
+
+    <RelativeLayout
+        xmlns:app="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+<!--        <ImageView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:background="@mipmap/login_back"-->
+<!--            android:scaleType="fitXY" />-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:gravity="center"-->
+<!--            android:orientation="vertical"-->
+<!--            android:padding="20dp">-->
+
+<!--            <ImageView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:src="@mipmap/logo" />-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="34dp"-->
+<!--                android:background="@mipmap/user_edit"-->
+<!--                android:gravity="center"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:padding="16sp">-->
+
+<!--                <ImageView-->
+<!--                    android:layout_width="22dp"-->
+<!--                    android:layout_height="22dp"-->
+<!--                    android:src="@mipmap/user_icon" />-->
+
+<!--                <View-->
+<!--                    android:layout_width="1dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_marginLeft="8dp"-->
+<!--                    android:layout_marginRight="8dp"-->
+<!--                    android:background="@color/textColorHint" />-->
+
+<!--                <EditText-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:background="@null"-->
+<!--                    android:hint="请输入用户名"-->
+<!--                    android:text="@={viewModel.userName}"-->
+<!--                    android:textColor="@color/textColor"-->
+<!--                    android:textColorHint="@color/textColorHint"-->
+<!--                    android:textSize="16sp"-->
+<!--                    binding:onFocusChangeCommand="@{viewModel.onFocusChangeCommand}" />-->
+
+<!--                <ImageView-->
+<!--                    android:layout_width="30dp"-->
+<!--                    android:layout_height="30dp"-->
+<!--                    android:padding="6dp"-->
+<!--                    android:src="@mipmap/clean_edit"-->
+<!--                    android:visibility="@{viewModel.clearBtnVisibility}"-->
+<!--                    binding:onClickCommand="@{viewModel.clearUserNameOnClickCommand}" />-->
+<!--            </LinearLayout>-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:background="@mipmap/user_edit"-->
+<!--                android:gravity="center"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:padding="16sp">-->
+
+<!--                <ImageView-->
+<!--                    android:layout_width="22dp"-->
+<!--                    android:layout_height="22dp"-->
+<!--                    android:src="@mipmap/password_icon" />-->
+
+<!--                <View-->
+<!--                    android:layout_width="1dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_marginLeft="8dp"-->
+<!--                    android:layout_marginRight="8dp"-->
+<!--                    android:background="@color/textColorHint" />-->
+
+<!--                <EditText-->
+<!--                    android:id="@+id/et_password"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:background="@null"-->
+<!--                    android:hint="请输入密码"-->
+<!--                    android:inputType="textPassword"-->
+<!--                    android:text="@={viewModel.password}"-->
+<!--                    android:textColor="@color/textColor"-->
+<!--                    android:textColorHint="@color/textColorHint"-->
+<!--                    android:textSize="16sp" />-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/iv_swich_passwrod"-->
+<!--                    android:layout_width="30dp"-->
+<!--                    android:layout_height="30dp"-->
+<!--                    android:padding="6dp"-->
+<!--                    android:src="@mipmap/show_psw_press"-->
+<!--                    binding:onClickCommand="@{viewModel.passwordShowSwitchOnClickCommand}" />-->
+<!--            </LinearLayout>-->
+
+<!--            <RelativeLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="8dp">-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignParentRight="true"-->
+<!--                    android:layout_marginRight="8dp"-->
+<!--                    android:text="忘记密码"-->
+<!--                    android:textColor="@color/colorPrimaryDark"-->
+<!--                    android:textSize="16sp" />-->
+<!--            </RelativeLayout>-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="16dp"-->
+<!--                android:background="@mipmap/btn_login"-->
+<!--                android:orientation="vertical"-->
+<!--                android:padding="6dp">-->
+
+<!--                <Button-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:background="?selectableItemBackground"-->
+<!--                    android:text="登录"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textSize="18sp"-->
+<!--                    binding:onClickCommand="@{viewModel.loginOnClickCommand}" />-->
+<!--            </LinearLayout>-->
+
+<!--            <TextView-->
+<!--                android:gravity="center"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="模拟一个登陆操作,随便输入账号密码点击登录即可进入"-->
+<!--                android:textColor="#EE1010" />-->
+<!--        </LinearLayout>-->
+        <!-- 新加 -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@mipmap/login_background"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_20"
+                android:text="先每餐饮收银软件"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/mark_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="120dp"
+                android:layout_marginLeft="120dp"
+                binding:onClickCommand="@{viewModel.FanHuiOnClickCommand}"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@mipmap/login_back_ico" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="当前选择"
+                    android:textSize="36sp"
+                    android:textColor="@color/white"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="中餐版本"
+                    android:textSize="52sp"
+                    android:textColor="@color/white"/>
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/login_view"
+                android:layout_marginLeft="420dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/dialog_bg"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="@dimen/dp_50"
+                        android:src="@mipmap/youwu_logo" />
+
+                    <ImageView
+                        android:visibility="gone"
+                        android:id="@+id/img_close"
+                        android:layout_width="@dimen/dp_25"
+                        android:layout_height="@dimen/dp_25"
+                        android:layout_alignParentRight="true"
+                        android:src="@mipmap/icon_close" />
+                </RelativeLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="70dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginRight="70dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    app:cardElevation="@dimen/dp_4">
+
+                    <EditText
+                        android:id="@+id/ed_user"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/dialog_bg"
+                        android:drawableLeft="@mipmap/userlogo"
+                        android:drawablePadding="@dimen/dp_10"
+                        android:hint="请输入收银员账号"
+                        android:inputType="text"
+                        android:lines="1"
+                        android:maxLength="11"
+                        android:maxLines="1"
+                        android:padding="@dimen/dp_10"
+                        android:text="@={viewModel.userName}"
+                        android:textSize="20sp"
+                        />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="70dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginRight="70dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    app:cardElevation="@dimen/dp_4">
+
+                    <EditText
+                        android:id="@+id/ed_pwd"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/dialog_bg"
+                        android:drawableLeft="@mipmap/passwordlogo"
+                        android:drawablePadding="@dimen/dp_10"
+                        android:hint="请输入收银员密码"
+                        android:inputType="textPassword"
+                        android:lines="1"
+                        android:maxLength="11"
+                        android:maxLines="1"
+                        android:text="@={viewModel.password}"
+                        android:padding="@dimen/dp_10"
+                        android:textSize="20sp" />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="70dp"
+                    android:layout_marginTop="20dp"
+                    android:drawableLeft="@mipmap/select"
+                    android:drawablePadding="@dimen/dp_10"
+                    android:padding="@dimen/dp_10"
+                    android:text="保存密码"
+                    android:textSize="16sp" />
+
+
+                <TextView
+                    android:id="@+id/login"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginRight="100dp"
+                    android:background="@drawable/bg_btn"
+                    android:gravity="center"
+                    android:padding="@dimen/dp_10"
+                    android:text="登录"
+
+                    android:textColor="@color/white"
+                    binding:onClickCommand="@{viewModel.loginOnClickCommand}"
+                    android:textSize="22sp" />
+
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:visibility="visible"
+                android:id="@+id/select_version"
+                android:layout_width="680dp"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="请选择"
+                    android:textSize="36sp"
+                    android:textColor="@color/white"
+                    android:gravity="center"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="您要登录的版本"
+                    android:textSize="36sp"
+                    android:textColor="@color/white"
+                    android:gravity="center"/>
+
+                <LinearLayout
+                    android:layout_marginTop="50dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_marginLeft="50dp"
+                        android:id="@+id/ceshi_iv"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone"
+                        android:src="@mipmap/zhongcan_ico"/>
+
+                    <ImageView
+                        android:layout_marginLeft="50dp"
+                        android:id="@+id/zhongcan_iv"
+                        android:layout_width="260dp"
+                        android:layout_height="260dp"
+                        binding:onClickCommand="@{viewModel.ZhongCanOnClickCommand}"
+                        android:src="@mipmap/zhongcan_ico"/>
+                    <ImageView
+                        android:layout_marginLeft="50dp"
+                        android:id="@+id/huoguo_iv"
+                        android:layout_width="260dp"
+                        android:layout_height="260dp"
+                        android:src="@mipmap/huoguo_ico"
+                        binding:onClickCommand="@{viewModel.HuoGuoOnClickCommand}"/>
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+</layout>

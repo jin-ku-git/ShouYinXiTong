@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:binding="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <import type="com.youwu.shouyinxitong.ui.coupon.CouponPushPackageItemViewModel" />
+        <import type="android.view.View"/>
+
+        <variable
+            name="viewModel"
+            type="CouponPushPackageItemViewModel" />
+    </data>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_50"
+    android:orientation="horizontal"
+    android:gravity="center"
+    binding:onClickCommand="@{viewModel.itemClick}">
+
+    <TextView
+        android:layout_width="@dimen/dp_50"
+        android:layout_height="match_parent"/>
+
+
+    <ImageView
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:src="@{viewModel.entity.currentSelect==1?@drawable/checked_iv:@drawable/unchecked_iv}"
+        android:padding="5dp"
+        />
+
+    <TextView
+        android:layout_marginLeft="@dimen/dp_10"
+        android:id="@+id/couponpage_name_tv"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:text="优惠券包名称"
+        android:textSize="16sp"
+        android:gravity="center|left"
+        android:maxLines="1"/>
+
+    <TextView
+        android:id="@+id/couponpage_add_time"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:text="创建时间"
+        android:maxLines="1"
+        android:textSize="16sp"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/coupon_num_tv"
+        android:layout_width="0dp"
+        android:layout_weight="0.5"
+        android:layout_height="match_parent"
+        android:text="赠送详情"
+        android:textSize="16sp"
+        android:gravity="center"/>
+
+    <TextView
+        android:visibility="invisible"
+        android:id="@+id/indate_tv"
+        android:layout_width="0dp"
+        android:layout_weight="1.5"
+        android:layout_height="match_parent"
+        android:text="活动有效期"
+        android:textSize="16sp"
+        android:gravity="center"/>
+
+</LinearLayout>
+</layout>

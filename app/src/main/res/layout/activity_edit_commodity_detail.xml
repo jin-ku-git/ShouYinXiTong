@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:binding="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <import type="com.youwu.shouyinxitong.ui.commodity.EditCommodityDetailViewModel" />
+
+        <variable
+            name="viewModel"
+            type="EditCommodityDetailViewModel" />
+        <import type="me.goldze.mvvmhabit.binding.viewadapter.recyclerview.LayoutManagers" />
+
+        <import type="me.goldze.mvvmhabit.binding.viewadapter.recyclerview.LineManagers" />
+    </data>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.youwu.shouyinxitong.ui.commodity.EditCommodityDetailActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/back_to_main"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+
+            android:drawableLeft="@mipmap/icon_back_yellow"
+            android:drawablePadding="@dimen/dp_5"
+            android:gravity="center_vertical"
+            android:paddingLeft="15.34dp"
+            android:text="首页"
+            android:textColor="#9A9A9A"
+            android:textSize="@dimen/sp_16"
+            binding:onClickCommand="@{viewModel.finishonClick}"/>
+
+        <EditText
+            android:id="@+id/edit_search"
+            android:layout_width="612dp"
+            android:layout_height="45dp"
+            android:layout_centerInParent="true"
+            android:background="@null"
+            android:imeOptions="actionSearch"
+            android:drawableLeft="@mipmap/icon_new_search"
+            android:drawablePadding="@dimen/dp_10"
+            android:gravity="center"
+            android:hint="请输入拼音搜索商品"
+            android:inputType="text"
+            android:padding="@dimen/dp_10"
+            android:textSize="@dimen/sp_14" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/search_goods_result_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:background="@color/background"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="600dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/dialog_bg"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="@dimen/dp_10"
+                android:text="商品名称"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/sp_16" />
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="100dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="@dimen/dp_10"
+                android:text="单价"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/sp_16" />
+
+        </LinearLayout>
+
+            <com.scwang.smartrefresh.layout.SmartRefreshLayout
+                android:id="@+id/smartrefreshlayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_alignStart="@+id/search_goods_result_layout"
+                android:layout_alignBottom="@+id/search_goods_result_layout"
+                >
+
+            <com.scwang.smartrefresh.layout.header.ClassicsHeader
+                style="@style/RefreshStyle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50" />
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/search_goods_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_weight="1"
+            binding:itemBinding="@{viewModel.itemBinding}"
+            binding:items="@{viewModel.observableList}"
+            binding:layoutManager="@{LayoutManagers.typeHCount_1()}"
+            binding:lineManager="@{LineManagers.vertical()}"
+
+           />
+            </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+
+                <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+                    style="@style/RefreshStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp" />
+            </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+        </LinearLayout>
+        <com.youwu.shouyinxitong.view.MyCustKeybords
+            android:id="@+id/custom_keyboard"
+            android:layout_width="match_parent"
+            android:layout_height="250dp" />
+    </LinearLayout>
+</LinearLayout>
+</layout>

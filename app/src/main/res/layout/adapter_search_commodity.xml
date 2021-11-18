@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:binding="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="com.youwu.shouyinxitong.ui.commodity.EditCommodityItemViewModel" />
+
+        <variable
+            name="viewModel"
+            type="EditCommodityItemViewModel" />
+    </data>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="1dp"
+    android:clipToPadding="true"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    binding:onClickCommand="@{viewModel.itemClick}"
+    android:padding="@dimen/dp_10">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp">
+
+            <com.youwu.shouyinxitong.view.RoundImageView
+                android:id="@+id/goods_img"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@mipmap/load_fail" />
+
+            <com.youwu.shouyinxitong.view.RoundImageView
+                android:id="@+id/sell_null"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:visibility="@{viewModel.entity.commodity_stock_num&lt;=0?viewModel.GONE:viewModel.VISIBLE}"
+                android:src="@mipmap/sell_null" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:gravity="center"
+            android:padding="@dimen/dp_10"
+            android:text="@{viewModel.entity.commodity_name+viewModel.getPosition()}"
+            android:layout_gravity="center"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/sp_16" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tv_price"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:padding="@dimen/dp_10"
+        android:text="@{viewModel.entity.commodity_price}"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/sp_16" />
+
+    <LinearLayout
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/add_icon"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:padding="@dimen/dp_10"
+            android:src="@mipmap/jia_icon" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
+</layout>

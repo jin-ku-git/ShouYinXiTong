@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:binding="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="com.youwu.shouyinxitong.ui.order.RestingListViewModel" />
+
+        <variable
+            name="viewModel"
+            type="RestingListViewModel" />
+
+        <import type="me.goldze.mvvmhabit.binding.viewadapter.recyclerview.LayoutManagers" />
+
+        <import type="me.goldze.mvvmhabit.binding.viewadapter.recyclerview.LineManagers" />
+
+    </data>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="horizontal"
+    tools:context=".ui.order.RestingListActivity">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/white"
+            android:drawableLeft="@mipmap/back_icon"
+            android:drawablePadding="@dimen/dp_10"
+            android:id="@+id/back_to_main"
+            android:gravity="center_vertical"
+            android:padding="@dimen/dp_10"
+            android:text="返回工作页"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_16"
+            binding:onClickCommand="@{viewModel.finishonClick}"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@drawable/dialog_bg"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical"
+            android:padding="@dimen/dp_10">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:id="@+id/search_edit"
+                android:background="@drawable/cir_background"
+                android:drawableLeft="@mipmap/search_icon"
+                android:drawablePadding="@dimen/dp_10"
+                android:hint="输入单号搜索单据"
+                android:inputType="number"
+                android:padding="@dimen/dp_10"
+                android:textSize="@dimen/sp_14" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:id="@+id/resting_order_recy_view"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/dp_10" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_weight="3"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="牌号："
+                android:id="@+id/order_number"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/sp_14" />
+
+            <LinearLayout
+                android:id="@+id/vip_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="30dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:visibility="invisible">
+
+                <com.youwu.shouyinxitong.view.CircularImage
+                    android:id="@+id/vip_head_image"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="@dimen/dp_4"
+                    android:src="@color/main_hue" />
+
+                <TextView
+                    android:id="@+id/vip_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="会员名称"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/sp_14" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/dialog_bg">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="15dp"
+                    android:text="商品名"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/sp_14" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="15dp"
+                    android:text="数量"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/sp_14" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="15dp"
+                    android:text="单价"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/sp_14" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="15dp"
+                    android:text="单品折扣"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/sp_14" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="15dp"
+                    android:text="小计"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/sp_14" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_10"
+                android:id="@+id/creat_time"
+                android:text="00-00 00:00:00 下单 0 件"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_14" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:id="@+id/shop_car_recy_cle"
+                android:background="@drawable/dialog_bg" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@drawable/dialog_bg"
+                android:orientation="vertical"
+                android:padding="@dimen/dp_10">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/dp_4"
+                                android:id="@+id/total_size"
+                                android:text="共0种商品"
+                                android:textColor="@color/text_black"
+                                android:textSize="@dimen/sp_14" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:padding="@dimen/dp_4"
+                                android:text="原价"
+                                android:textColor="@color/text_black"
+                                android:textSize="@dimen/sp_14" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="@dimen/dp_10"
+                                android:padding="@dimen/dp_4"
+                                android:text="￥0"
+                                android:id="@+id/all_money"
+                                android:textColor="@color/main_hue"
+                                android:textSize="@dimen/sp_14" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:visibility="invisible"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/dp_4"
+                            android:id="@+id/tv_buy_count"
+                            android:text="查看参与活动详情"
+                            android:textColor="@color/text_black"
+                            android:textSize="@dimen/sp_14" />
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:visibility="gone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_marginRight="@dimen/dp_10"
+                        android:background="@drawable/cir_red_kong"
+                        android:paddingLeft="30dp"
+                        android:paddingTop="@dimen/dp_10"
+                        android:paddingRight="30dp"
+                        android:id="@+id/edit_resting_order"
+                        android:paddingBottom="@dimen/dp_10"
+                        android:text="编辑"
+                        android:textColor="@color/main_hue" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_marginRight="@dimen/dp_10"
+                        android:background="@drawable/bg_btn"
+                        android:paddingLeft="40dp"
+                        android:paddingTop="@dimen/dp_10"
+                        android:paddingRight="40dp"
+                        android:id="@+id/resting_pay"
+                        android:paddingBottom="@dimen/dp_10"
+                        android:text="去收款"
+                        android:textColor="@color/white" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</LinearLayout>
+</layout>

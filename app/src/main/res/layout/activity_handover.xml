@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:binding="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <import type="com.youwu.shouyinxitong.ui.setup.HandoverViewModel" />
+
+        <variable
+            name="viewModel"
+            type="HandoverViewModel" />
+    </data>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".ui.setup.HandoverActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:orientation="horizontal"
+            android:background="@drawable/shape_border">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingLeft="15.34dp"
+                android:background="@color/white"
+                android:drawableLeft="@mipmap/icon_back_yellow"
+                android:drawablePadding="@dimen/dp_5"
+                android:id="@+id/back_to_main"
+                android:gravity="center_vertical"
+                android:text="交接班"
+                android:textColor="#9A9A9A"
+                android:textSize="@dimen/sp_16"
+                binding:onClickCommand="@{viewModel.finishonClick}"/>
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:id="@+id/day_end"
+                android:text="日结"
+                android:textColor="#0091FF"
+                android:textSize="@dimen/sp_16"/>
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:clickable="false"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:drawableLeft="@mipmap/icon_help"
+                android:drawablePadding="@dimen/dp_10"
+                android:text="帮助"
+                android:textColor="#9A9A9A"
+                android:textSize="@dimen/sp_16"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="544dp"
+            android:paddingLeft="@dimen/dp_20"
+            android:paddingRight="@dimen/dp_20"
+            android:paddingBottom="10.34dp"
+            android:paddingTop="10.67dp"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingLeft="@dimen/activity_handover_margin"
+                android:paddingRight="@dimen/activity_handover_margin"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="87dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:text="总销售单数"
+                    android:textColor="#ff999999"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_gravity="center"
+                    android:id="@+id/total_number_sales"
+                    android:text="¥0"
+                    android:textColor="#ffe48013"
+                    android:textSize="40sp" />
+
+                <include layout="@layout/item_handover_item"
+                    android:id="@+id/handover_item_num_wx"/>
+
+                <include layout="@layout/item_handover_item"
+                    android:id="@+id/handover_item_num_zfb"/>
+
+                <include layout="@layout/item_handover_item"
+                    android:id="@+id/handover_item_num_yue"/>
+
+                <include layout="@layout/item_handover_item"
+                    android:id="@+id/handover_item_num_cash"/>
+
+                <include layout="@layout/item_handover_item"
+                    android:id="@+id/handover_item_num_meituan"/>
+
+                <include layout="@layout/item_handover_item"
+                    android:id="@+id/handover_item_num_mix"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:paddingLeft="@dimen/activity_handover_margin"
+                android:paddingRight="@dimen/activity_handover_margin"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="87dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:text="总实收金额"
+                    android:textColor="#ff999999"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_gravity="center"
+                    android:id="@+id/total_pay_price"
+                    android:text="¥0"
+                    android:textColor="#ffe48013"
+                    android:textSize="40sp" />
+
+                <include layout="@layout/item_handover_item"
+                    android:id="@+id/handover_item_pay_wx"/>
+
+                <include layout="@layout/item_handover_item"
+                    android:id="@+id/handover_item_pay_zfb"/>
+
+                <include layout="@layout/item_handover_item"
+                    android:id="@+id/handover_item_pay_yue"/>
+
+                <include layout="@layout/item_handover_item"
+                    android:id="@+id/handover_item_pay_cash"/>
+
+                <include layout="@layout/item_handover_item"
+                    android:id="@+id/handover_item_pay_meituan"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:paddingLeft="@dimen/activity_handover_margin"
+                android:paddingRight="@dimen/activity_handover_margin"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="87dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:text="总销售额"
+                    android:textColor="#ff999999"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_gravity="center"
+                    android:id="@+id/total_sales"
+                    android:text="¥0"
+                    android:textColor="#ffe48013"
+                    android:textSize="40sp" />
+
+                <include layout="@layout/item_handover_item"
+                    android:id="@+id/handover_item_sales_wx"/>
+
+                <include layout="@layout/item_handover_item"
+                    android:id="@+id/handover_item_sales_zfb"/>
+
+                <include layout="@layout/item_handover_item"
+                    android:id="@+id/handover_item_sales_yue"/>
+
+                <include layout="@layout/item_handover_item"
+                    android:id="@+id/handover_item_sales_cash"/>
+
+                <include layout="@layout/item_handover_item"
+                    android:id="@+id/handover_item_sales_meituan"/>
+
+                <include layout="@layout/item_handover_item"
+                    android:id="@+id/handover_item_sales_mix"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:visibility="visible"
+                android:paddingLeft="@dimen/activity_handover_margin"
+                android:paddingRight="@dimen/activity_handover_margin"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="87dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:text="总充值金额"
+                    android:textColor="#ff999999"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/recharge_all_money"
+                    android:layout_width="wrap_content"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_gravity="center"
+                    android:text="¥0"
+                    android:textColor="#ffe48013"
+                    android:textSize="40sp" />
+
+<!--                <include layout="@layout/item_handover_item"-->
+<!--                    android:id="@+id/handover_item_10"/>-->
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="122dp"
+            android:background="#333333">
+
+            <TextView
+                android:id="@+id/tv_login_time"
+                android:layout_width="296dp"
+                android:layout_height="25dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="101.34dp"
+                android:layout_marginTop="19.34dp"
+                android:text="本次登录时间：2020-09-28 18:09:31"
+                android:textColor="#ffffffff"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:layout_width="171dp"
+                android:layout_height="28dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="19.34dp"
+                android:layout_marginRight="84.67dp"
+                android:gravity="right"
+                android:id="@+id/text_cashier_name"
+                android:text="收银员：1001/1001"
+                android:textColor="#ffffffff"
+                android:textSize="20sp" />
+
+            <CheckBox
+                android:layout_width="160dp"
+                android:layout_height="24.67dp"
+                style="@style/Widget.AppCompat.CompoundButton.RadioButton"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="27.34dp"
+                android:layout_marginLeft="101.34dp"
+                android:id="@+id/checkbox_print"
+                android:text="交接班打印小票"
+                android:textColor="#ffffffff"
+                android:textSize="18sp"/>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_marginTop="50dp"
+                android:layout_height="1dp"
+                android:layout_marginLeft="101.34dp"
+                android:layout_marginRight="84.67dp"
+                android:background="#ffd8d8d8" />
+
+            <Button
+                android:layout_width="142dp"
+                android:layout_height="38dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="18.67dp"
+                android:layout_marginRight="84.67dp"
+                android:id="@+id/button_check"
+                android:text="盘点现金"
+                android:background="#ffe48013"
+                android:textColor="#ffffffff"
+                android:textSize="16sp"/>
+
+            <Button
+                android:layout_width="142dp"
+                android:layout_height="38dp"
+                android:layout_toLeftOf="@id/button_check"
+                android:layout_alignTop="@id/button_check"
+                android:layout_marginRight="11.34dp"
+                android:id="@+id/button_goods_list"
+                android:text="销售商品列表"
+                android:background="#ffaa9888"
+                android:textColor="#ffffffff"
+                android:textSize="16sp"/>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/progress_wheel_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#44000000"
+        android:visibility="gone">
+
+        <com.youwu.shouyinxitong.view.ProgressWheel xmlns:wheel="http://schemas.android.com/apk/res-auto"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            wheel:matProg_barColor="#000000"
+            wheel:matProg_progressIndeterminate="true" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/cash_check_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <include layout="@layout/dialog_check_cash"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
+</layout>

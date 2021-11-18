@@ -1,0 +1,109 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!--将ActionBar隐藏,这里使用ToolBar-->
+        <item name="windowActionBar">false</item>
+        <!-- 使用 API Level 22以上编译的话，要拿掉前綴字 -->
+        <item name="windowNoTitle">true</item>
+        <!--colorPrimary 对应ToolBar的颜色-->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <!--colorPrimaryDark对应状态栏的颜色-->
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <!--colorAccent 对应EditText编辑时、RadioButton选中、CheckBox等选中时的颜色。-->
+        <item name="colorAccent">@color/colorPrimaryDark</item>
+        <item name="android:windowBackground">@color/white</item>
+
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="ViewLineStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/viewLineColor</item>
+    </style>
+
+    <style name="RefreshStyle">
+        <!-- 下拉状态的图标设置 -->
+        <!--        <item name="srlDrawableArrow">@mipmap/circle_loading</item>-->
+        <!--        &lt;!&ndash; 释放状态的图标设置&ndash;&gt;-->
+        <!--        <item name="srlDrawableProgress">@mipmap/circle_loading</item>-->
+        <!-- 下拉状态图标尺寸大小-->
+        <item name="srlDrawableArrowSize">24dp</item>
+        <!-- 释放状态图标尺寸大小-->
+        <item name="srlDrawableProgressSize">24dp</item>
+        <!-- 文字颜色 -->
+        <item name="srlAccentColor">@color/black</item>
+
+        <!-- 上拉加载提示文字-->
+        <item name="srlTextLoading">客官莫急</item>
+        <!-- 上下拉状态提示文字设置-->
+        <item name="srlTextPulling">下拉进行刷新</item>
+        <!-- 松开刷新的文字设置-->
+        <item name="srlTextRelease">松开刷新</item>
+        <!-- 正在刷新中的状态文字设置-->
+        <item name="srlTextRefreshing">加载中...</item>
+        <!-- 刷新成功文字设置-->
+        <item name="srlTextFinish">加载成功</item>
+    </style>
+
+    <style name="BottomDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowTitleStyle">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowAnimationStyle">@style/BottomDialog.AnimationStyle</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+    </style>
+
+    <style name="CenterDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowTitleStyle">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowAnimationStyle">@style/CenterDialogAnimationStyle</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+    </style>
+
+    <style name="BottomDialog.AnimationStyle" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/slide_in_from_bottom</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_to_bottom</item>
+    </style>
+
+    <style name="CenterDialogAnimationStyle" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/slide_in_from_bottom</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_to_bottom</item>
+    </style>
+
+    <style name="Transparent" parent="AppTheme">
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <!--浅黑字体-->
+    <style name="font_hint_14">
+        <item name="android:textColor">@color/md_grey_700</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="font_black_14">
+        <item name="android:textColor">@color/font_black</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <!--popwindow 显示属性-->
+    <style name="Dialog" parent="android:style/Theme.Dialog">
+        <item name="android:background">#00000000</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
+    <style name="font_white_14">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="font_white_24">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+</resources>

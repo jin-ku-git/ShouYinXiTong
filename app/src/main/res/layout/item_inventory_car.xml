@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:binding="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <import type="com.youwu.shouyinxitong.ui.calculate.InventoryShoppingCartItemViewModel" />
+
+        <variable
+            name="viewModel"
+            type="InventoryShoppingCartItemViewModel" />
+
+    </data>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        >
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:orientation="horizontal">
+
+
+
+        <TextView
+            android:id="@+id/tv_sn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.entity.commodity_ranking}"
+            android:textColor="@color/color_303030"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:maxLines="2"
+            android:text="@{viewModel.entity.commodity_name}"
+            android:textColor="@color/color_303030"
+            android:textSize="15sp" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/tv_origin_num"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.entity.commodity_stock_num+@string/Textnull}"
+            android:gravity="center"
+            android:layout_weight="3"
+            android:textColor="@color/color_303030"
+            android:textSize="15sp" />
+        <TextView
+            android:id="@+id/tv_num"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{viewModel.entity.commodity_change_num+@string/format_bag}"
+            android:textColor="@color/color_303030"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/iv_delete"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:padding="5dp"
+            android:src="@mipmap/icon_goods_delete"
+            binding:onClickCommand="@{viewModel.deleteOnClick}"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:background="@color/color_D8D8D8" />
+
+</LinearLayout>
+</layout>

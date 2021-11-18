@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.youwu.shouyinxitong">
+
+    <!-- Required -->
+    <permission
+        android:name="${applicationId}.permission.JPUSH_MESSAGE"
+        android:protectionLevel="signature" /> <!-- Required  一些系统要求的权限，如访问网络等 -->
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+
+    <uses-permission android:name="${applicationId}.permission.JPUSH_MESSAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.ACCESS_GPS" /> <!-- 更改wifi连状态 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.INSTALL_FAILED_CONFLICTING_PROVIDER" />
+    <uses-permission android:name="android.hardware.usb.accessory" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+
+    <uses-feature
+        android:name="android.hardware.usb.host"
+        android:required="true" />
+
+    <uses-permission android:name="android.hardware.usb.UsbAccessory" />
+
+    <application
+        android:name=".app.AppApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/logo"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".ui.login.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.main.DemoActivity"></activity>
+        <activity android:name=".ui.main.MainActivity"></activity>
+        <activity android:name=".ui.setup.SystemSettingActivity"></activity>
+        <activity android:name=".ui.order.RestingListActivity"></activity>
+        <activity android:name=".ui.search.SearchVipActivity"></activity>
+        <activity android:name=".ui.setup.HandoverActivity"></activity>
+        <activity android:name=".ui.vip.AddVIPActivity"></activity>
+        <activity android:name=".ui.order.SellOrderListActivity"></activity>
+        <activity android:name=".ui.commodity.AddCommodityDetailActivity"></activity>
+        <activity android:name=".ui.commodity.EditCommodityDetailActivity"></activity>
+        <activity android:name=".ui.calculate.InventoryActivity"></activity>
+        <activity android:name=".ui.applygoods.ApplyOrderActivity"></activity>
+        <activity android:name=".ui.record.SalesCountActivity"></activity>
+        <activity android:name=".ui.record.RechargeOrdersActivity"></activity>
+        <activity android:name=".ui.calculate.CheckNumActivity"></activity>
+        <activity android:name=".ui.print.PrintSetupActivity"></activity>
+        <activity android:name=".ui.applygoods.GoodsConfirmActivity"></activity>
+        <activity android:name=".ui.order.OrderNewlyBuildActivity"></activity>
+        <activity android:name=".ui.order.ConfirmGoodsActivity"></activity>
+        <activity android:name=".ui.cashier.CashierActivity"></activity>
+        <activity android:name=".ui.coupon.CouponPushPackageActivity"></activity>
+        <activity android:name=".ui.coupon.CouponPushActivity"></activity>
+        <activity android:name=".ui.vip.VipRechargeActivity"></activity>
+        <activity android:name=".ui.main.GoodsDetailsActivity"
+            android:theme="@style/Transparent"
+            ></activity>
+
+
+
+
+        <service android:name="org.eclipse.paho.android.service.MqttService" />
+        <service android:name=".ui.main.DemoActivity$BackgroundService" /> <!-- since 3.3.0 Required SDK 核心功能 -->
+        <!-- 可配置android:process参数将PushService放在其他进程中 -->
+        <!-- User defined.  For test only 继承自cn.jpush.android.service.JCommonService -->
+        <service
+            android:name=".receiver.PushService"
+            android:process=":pushcore">
+            <intent-filter>
+                <action android:name="cn.jiguang.user.service.action" />
+            </intent-filter>
+        </service> <!-- since 3.3.0 Required SDK核心功能 -->
+        <activity
+            android:name="cn.jpush.android.service.JNotifyActivity"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            android:taskAffinity="jpush.custom"
+
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.JNotifyActivity" />
+
+                <category android:name="${applicationId}" />
+            </intent-filter>
+        </activity> <!-- Required since 3.0.7 -->
+        <!-- 新的 tag/alias 接口结果返回需要开发者配置一个自定的广播 -->
+        <!-- 3.3.0开始所有事件将通过该类回调 -->
+        <!-- 该广播需要继承 JPush 提供的 JPushMessageReceiver 类, 并如下新增一个 Intent-Filter -->
+        <receiver
+            android:name=".receiver.MyReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.RECEIVE_MESSAGE" />
+
+                <category android:name="com.youwu.lz.intelface" />
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name=".ycupdatelib.VersionFileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider> <!-- User defined.  For test only  用户自定义接收消息器,3.0.7开始支持,目前新tag/alias接口设置结果会在该广播接收器对应的方法中回调 -->
+        <!-- since 3.3.0 接收JPush相关事件 -->
+        <receiver android:name=".receiver.PushMessageReceiver">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.RECEIVE_MESSAGE" />
+
+                <category android:name="${applicationId}" />
+            </intent-filter>
+        </receiver>
+
+        <meta-data
+            android:name="JPUSH_CHANNEL"
+            android:value="${JPUSH_CHANNEL}" />
+        <meta-data
+            android:name="JPUSH_APPKEY"
+            android:value="${JPUSH_APPKEY}" />
+    </application>
+
+</manifest>

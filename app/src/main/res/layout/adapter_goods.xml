@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="com.youwu.shouyinxitong.ui.main.MainGoodItemViewModel" />
+
+        <variable
+            name="viewModel"
+            type="MainGoodItemViewModel" />
+    </data>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginTop="@dimen/dp_25"
+    android:gravity="center_horizontal"
+    android:orientation="horizontal"
+    android:paddingLeft="@dimen/sp_14"
+    android:paddingRight="@dimen/sp_14">
+
+
+    <RelativeLayout
+        android:id="@+id/rela"
+        android:layout_width="114dp"
+        android:layout_height="114dp">
+
+        <com.youwu.shouyinxitong.view.RoundImageView
+            android:id="@+id/goods_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:src="@{viewModel.entity.image}" />
+
+        <com.youwu.shouyinxitong.view.RoundImageView
+            android:id="@+id/sell_null"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:padding="@dimen/dp_10"
+            android:src="@mipmap/sell_null"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="114dp"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/rela"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/goods_name"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="@dimen/dp_4"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:lines="1"
+            android:text="@{viewModel.entity.product_name}"
+            android:textColor="@color/tv_303030"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_price"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="15dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/dp_4"
+            android:paddingRight="@dimen/dp_4"
+            android:text="@{viewModel.entity.price}"
+            android:textColor="@color/main_hue"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</RelativeLayout>
+</layout>

@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:binding="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.youwu.shouyinxitong.ui.vip.AddVIPViewModel" />
+
+        <variable
+            name="viewModel"
+            type="AddVIPViewModel" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        tools:context="com.youwu.shouyinxitong.ui.vip.AddVIPActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/layout_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                binding:onClickCommand="@{viewModel.finishonClick}">
+
+                <ImageView
+                    android:id="@+id/iv_back"
+                    android:layout_width="@dimen/dp_50"
+                    android:layout_height="@dimen/dp_50"
+                    android:padding="@dimen/dp_15"
+                    android:src="@mipmap/icon_left" />
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="会员新增"
+                    android:textColor="#ff9a9a9a"
+                    android:textSize="15sp" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="600dp"
+            android:layout_height="match_parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@mipmap/icon_person_default" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="姓名"
+                            android:textColor="#ff949494"
+                            android:textSize="15sp" />
+
+                        <EditText
+                            android:id="@+id/et_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:hint="输入姓名"
+                            android:minWidth="300dp"
+                            android:paddingLeft="10dp"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="15sp"
+                            android:text="@={viewModel.userBean.user_name}"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="电话"
+                            android:textColor="#ff949494"
+                            android:textSize="15sp" />
+
+                        <EditText
+                            android:id="@+id/et_phone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:hint="输入电话"
+                            android:inputType="phone"
+                            android:minWidth="300dp"
+                            android:paddingLeft="10dp"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="15sp"
+                            android:text="@={viewModel.userBean.user_phone}"/>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/user_balance_ll"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="@{viewModel.type==0?viewModel.GONE:viewModel.VISIBLE}">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center|bottom"
+                        android:text="余额"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/user_balance_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@={viewModel.userBean.user_money}"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="#F6F6F6"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp_12">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="开卡日期 "
+                    android:textColor="#ff4f4f4f"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tv_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="@{viewModel.userBean.user_create_time}"
+                    android:textColor="#ff4f4f4f"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="#F6F6F6"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="22dp"
+                    android:text="联系地址："
+                    android:textColor="#ff4f4f4f"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/et_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:background="@null"
+                    android:minWidth="300dp"
+                    android:padding="@dimen/dp_12"
+                    android:textColor="#ff4f4f4f"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="#F6F6F6"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="22dp"
+                    android:text="备注："
+                    android:textColor="#ff4f4f4f"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/et_remarks"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:background="@null"
+                    android:hint="无"
+                    android:minWidth="200dp"
+                    android:padding="@dimen/dp_12"
+                    android:textColor="#ff4f4f4f"
+                    android:textSize="15sp"
+                    android:text="@={viewModel.userBean.remarks}"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_40"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_25"
+                    android:text="导购员"
+                    android:textColor="#ff4f4f4f"
+                    android:textSize="15sp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:text=" 点击选择＞"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="15sp"
+                    android:visibility="gone" />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/tv_cancel"
+                    android:layout_width="90dp"
+                    android:layout_height="35dp"
+                    android:background="#0099CC"
+                    android:gravity="center"
+                    android:text="取消"
+                    android:textColor="@color/white"
+                    android:visibility="@{viewModel.type==0?viewModel.VISIBLE:viewModel.GONE}"/>
+
+                <TextView
+                    android:id="@+id/tv_coupon_page"
+                    android:layout_width="100dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="15dp"
+                    android:background="#0099CC"
+                    android:gravity="center"
+                    android:text="优惠券包推送"
+                    android:textColor="@color/white"
+                    binding:onClickCommand="@{viewModel.CouPonPushPackageonClick}"
+                    android:visibility="@{viewModel.type==0?viewModel.GONE:viewModel.VISIBLE}"/>
+
+                <TextView
+                    android:id="@+id/tv_coupon"
+                    android:layout_width="90dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="15dp"
+                    android:background="#0099CC"
+                    android:gravity="center"
+                    android:text="优惠券推送"
+                    android:textColor="@color/white"
+                    binding:onClickCommand="@{viewModel.CouPonPushonClick}"
+                    android:visibility="@{viewModel.type==0?viewModel.GONE:viewModel.VISIBLE}"/>
+
+                <TextView
+                    android:id="@+id/tv_recharge"
+                    android:layout_width="90dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="15dp"
+                    android:background="#0099CC"
+                    android:gravity="center"
+                    android:text="充值"
+                    android:textColor="@color/white"
+                    binding:onClickCommand="@{viewModel.RechargeOnClick}"
+                    android:visibility="@{viewModel.type==0?viewModel.GONE:viewModel.VISIBLE}"/>
+
+                <TextView
+                    android:id="@+id/tv_add"
+                    android:layout_width="90dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="15dp"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center"
+                    android:text="@{viewModel.type==0?@string/newly_added:(viewModel.type==1?@string/select_member:@string/deselect_member)}"
+                    android:textColor="@color/white"
+                    binding:onClickCommand="@{viewModel.onCmtClickCommand}"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:binding="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <import type="com.youwu.shouyinxitong.ui.order.RestingOrderListItemViewModel" />
+
+        <variable
+            name="viewModel"
+            type="RestingOrderListItemViewModel" />
+    </data>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/shape_border">
+        <com.lid.lib.LabelTextView
+            android:id="@+id/lable"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="right"
+            android:clickable="false"
+            app:label_backgroundColor="#e02020"
+            app:label_distance="10dp"
+            app:label_height="20dp"
+            app:label_orientation="LEFT_TOP"
+            app:label_text="套餐"
+            app:label_textSize="10sp" />
+
+        <ImageView
+            android:id="@+id/goods_discont_iv"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@mipmap/icon_discount"
+            android:layout_gravity="top"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <com.youwu.shouyinxitong.view.RoundImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:id="@+id/goods_image"
+                    android:src="@mipmap/load_fail" />
+                <com.youwu.shouyinxitong.view.RoundImageView
+                    android:layout_width="match_parent"
+                    android:padding="@dimen/dp_10"
+                    android:id="@+id/sell_null"
+                    android:visibility="gone"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@mipmap/sell_null" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:text="@{viewModel.entity.commodity_name}"
+                android:gravity="center"
+                android:id="@+id/goods_name"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/sp_14" />
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:id="@+id/goods_number"
+            android:text="@{viewModel.entity.commodity_number}"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:id="@+id/goods_price"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@{'￥'+viewModel.entity.commodity_primary_price}"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:id="@+id/discount_price"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@{'￥'+viewModel.entity.commodity_discount_price}"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:id="@+id/goods_all_price"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@{'￥'+viewModel.entity.commodity_total_price}"
+            android:textColor="@color/main_hue"
+            android:textSize="@dimen/sp_14" />
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:binding="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <import type="com.youwu.shouyinxitong.ui.order.ConfirmGoodsItemViewModel" />
+        <import type="android.view.View"/>
+
+        <variable
+            name="viewModel"
+            type="ConfirmGoodsItemViewModel" />
+
+    </data>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:layout_marginTop="8dp"
+    android:background="#f0f0f0"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@{viewModel.entity.commodity_name}"
+        android:layout_marginLeft="20dp"
+        android:gravity="center_vertical"
+        android:textColor="@color/color_303030"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/tv_order_num"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="@{viewModel.entity.commodity_num+@string/Textnull}"
+        android:textColor="@color/color_303030"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/tv_base"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="o奶茶呀"
+        android:textColor="@color/color_303030"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/tv_unit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="o奶茶呀"
+        android:textColor="@color/color_303030"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/tv_base_num"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="o奶茶呀"
+        android:textColor="@color/color_303030"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/tv_price"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="@{viewModel.entity.commodity_purchase_price}"
+        android:textColor="@color/color_303030"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/tv_total_money"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="@{viewModel.entity.commodity_purchase_price_subtotal}"
+        android:textColor="@color/color_303030"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/tv_delete"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="删除"
+        android:textColor="@color/colorPrimary"
+        android:textSize="15sp"
+        binding:onClickCommand="@{viewModel.deleteOnClick}"/>
+</LinearLayout>
+</layout>

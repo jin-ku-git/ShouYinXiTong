@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:binding="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.youwu.shouyinxitong.ui.calculate.InventoryCommodityItemViewModel" />
+
+        <variable
+            name="viewModel"
+            type="InventoryCommodityItemViewModel" />
+
+        <import type="me.goldze.mvvmhabit.binding.viewadapter.recyclerview.LayoutManagers" />
+
+        <import type="me.goldze.mvvmhabit.binding.viewadapter.recyclerview.LineManagers" />
+    </data>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="@dimen/dp_10"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/layout_goods"
+        android:layout_width="match_parent"
+        android:layout_height="95dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="95dp"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/goods_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    android:src="@mipmap/icon_goods_default"
+                    binding:onClickCommand="@{viewModel.imgSynconsClick}"/>
+
+                <ImageView
+                    android:id="@+id/sell_null"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:padding="@dimen/dp_10"
+                    android:src="@mipmap/sell_null"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:onClick="@{viewModel.addShoppingCart}"
+
+                >
+
+
+                <TextView
+                    android:id="@+id/goods_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="2"
+                    android:text="@{viewModel.entity.commodity_name}"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tv_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:paddingLeft="@dimen/dp_4"
+                    android:paddingRight="@dimen/dp_4"
+                    android:text="@{viewModel.entity.commodity_stock_num+@string/Textnull}"
+                    android:textColor="@color/main_hue"
+                    android:textSize="15sp"
+                    android:visibility="visible"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <com.lid.lib.LabelTextView
+            android:id="@+id/lable"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:clickable="false"
+            app:label_backgroundColor="#e02020"
+            app:label_distance="35dp"
+            app:label_height="30dp"
+            app:label_orientation="RIGHT_TOP"
+            app:label_text="套餐"
+            app:label_textSize="15sp"
+            android:visibility="@{viewModel.entity.package_type==1?viewModel.VISIBLE:viewModel.GONE}"
+            />
+
+    </FrameLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/nestFull"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        />
+
+    <TextView
+        android:id="@+id/lookMore"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:text="查看更多"
+        android:layout_gravity="right"
+        android:gravity="center"
+        android:layout_marginRight="15dp"
+        android:textColor="@color/colorPrimary"
+        android:visibility="gone"
+        android:textSize="15sp" />
+
+
+    <TextView
+        android:id="@+id/iv_add"
+        android:layout_width="match_parent"
+        android:layout_height="95dp"
+        android:background="@drawable/add_goods_bg"
+        android:gravity="center"
+        android:text="✚ 新增商品"
+        android:visibility="gone"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+</LinearLayout>
+</layout>

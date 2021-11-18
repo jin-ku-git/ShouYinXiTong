@@ -1,0 +1,5 @@
+include ':cretinautoupdatelibrary'
+include ':shapeloading'
+include ':facesdk'
+include ':mvvmhabit'
+include ':app'

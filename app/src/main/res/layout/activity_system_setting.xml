@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:binding="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.youwu.shouyinxitong.ui.setup.SystemSettingViewModel" />
+
+        <variable
+            name="viewModel"
+            type="com.youwu.shouyinxitong.ui.setup.SystemSettingViewModel" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F6F6F6"
+        android:orientation="vertical"
+        tools:context="com.youwu.shouyinxitong.ui.setup.SystemSettingActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="0.25"
+                android:drawableLeft="@mipmap/arrow_left"
+                android:drawablePadding="@dimen/dp_5"
+                android:gravity="center|left"
+                android:text="保存设置"
+                android:textColor="@color/md_grey_700"
+                android:textSize="18sp"
+                binding:onClickCommand="@{viewModel.finishonClick}" />
+
+            <TextView
+                android:layout_width="1.5dp"
+                android:layout_height="match_parent"
+                android:background="#F6F6F6" />
+
+            <ImageView
+                android:id="@+id/level_back"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="70dp"
+                android:src="@mipmap/back_icon"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tittle_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="通用设置"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.27"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/vice_screen_setting"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@{viewModel.type==1?@color/colorPrimarys:@color/white}"
+                    android:gravity="center|left"
+                    android:paddingLeft="20dp"
+                    android:text="@string/set_screen"
+                    android:textColor="@{viewModel.type==1?@color/white:@color/black}"
+                    android:textSize="18sp"
+                    binding:onClickCommand="@{viewModel.setViceScreenOnClick}" />
+
+
+                <TextView
+                    android:id="@+id/account_setting"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="1.5dp"
+                    android:background="@{viewModel.type==2?@color/colorPrimary:@color/white}"
+                    android:gravity="center|left"
+                    android:paddingLeft="20dp"
+                    android:text="@string/set_account"
+                    android:textColor="@{viewModel.type==2?@color/white:@color/black}"
+                    android:textSize="18sp"
+                    binding:onClickCommand="@{viewModel.setAccountOnClick}" />
+
+                <TextView
+                    android:id="@+id/about_us"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="1.5dp"
+                    android:background="@{viewModel.type==3?@color/colorPrimary:@color/white}"
+                    android:gravity="center|left"
+                    android:paddingLeft="20dp"
+                    android:text="@string/about_us"
+                    android:textColor="@{viewModel.type==3?@color/white:@color/black}"
+                    android:textSize="18sp"
+                    binding:onClickCommand="@{viewModel.setAboutUsOnClick}" />
+
+                <TextView
+                    android:id="@+id/about_ble"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="1.5dp"
+                    android:background="@{viewModel.type==4?@color/colorPrimary:@color/white}"
+                    android:gravity="center|left"
+                    android:paddingLeft="20dp"
+                    android:text="@string/set_blue"
+                    android:textColor="@{viewModel.type==4?@color/white:@color/black}"
+                    android:textSize="18sp"
+                    binding:onClickCommand="@{viewModel.setAboutBleOnClick}" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="1.5dp"
+                    android:background="@color/white" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.73"
+                android:background="#F6F6F6"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:id="@+id/ble_time_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    android:visibility="@{viewModel.type==4?viewModel.VISIBLE:viewModel.GONE}">
+
+                    <LinearLayout
+                        android:id="@+id/layout_setting"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#eeeeee"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+                            android:text="@string/scan_setting"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="12sp" />
+
+                        <EditText
+                            android:id="@+id/et_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/setting_name"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp"
+                            android:textSize="13sp" />
+
+                        <EditText
+                            android:id="@+id/et_mac"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/setting_mac"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp"
+                            android:textSize="13sp" />
+
+
+                        <Switch
+                            android:id="@+id/sw_auto"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp"
+                            android:text="AutoConnect ?"
+                            android:textSize="13sp" />
+
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:id="@+id/btn_scan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/bg_btn"
+                            android:paddingLeft="40dp"
+                            android:paddingTop="@dimen/dp_10"
+                            android:paddingRight="40dp"
+                            android:paddingBottom="@dimen/dp_10"
+                            android:text="@string/start_scan"
+                            android:textColor="@color/white" />
+
+                        <ImageView
+                            android:id="@+id/img_loading"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dp"
+                            android:src="@mipmap/ic_loading"
+                            android:visibility="invisible" />
+
+                    </RelativeLayout>
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/ble_time_recyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/shape_border" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/about_us_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="@{viewModel.type==3?viewModel.VISIBLE:viewModel.GONE}">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="50dp"
+                        android:background="@mipmap/logo" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:gravity="center"
+                        android:text="先每餐饮收银软件"
+                        android:textColor="#E48013"
+                        android:textSize="30sp" />
+
+                    <TextView
+                        android:id="@+id/account_version_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:gravity="center"
+                        android:text="版本 3.1"
+                        android:textColor="#949494"
+                        android:textSize="24sp" />
+
+                    <LinearLayout
+                        android:layout_width="330dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="30dp"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="官方网站："
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="WWW.YOUWUU.COM"
+                            android:textColor="#E48013"
+                            android:textSize="18sp" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="330dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:text="咨询电话："
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:text="400-699-8850"
+                            android:textColor="#E48013"
+                            android:textSize="18sp" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/account_setting_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center|top"
+                    android:orientation="vertical"
+                    android:visibility="@{viewModel.type==2?viewModel.VISIBLE:viewModel.GONE}">
+
+                    <TextView
+                        android:id="@+id/account_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:gravity="center"
+                        android:text="当前账户：ywkj001"
+                        android:textSize="26sp" />
+
+                    <Button
+                        android:id="@+id/account_close"
+                        android:layout_width="180dp"
+                        android:layout_height="60dp"
+                        android:background="@color/red_bf233a"
+                        android:text="账号注销"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+
+                    <Button
+                        android:id="@+id/account_synchronous"
+                        android:layout_width="180dp"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="50dp"
+                        android:background="@color/colorPrimary"
+                        android:text="账号同步"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+
+                    <Button
+                        android:id="@+id/data_synchronous"
+                        android:layout_width="180dp"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="50dp"
+                        android:background="@color/colorPrimary"
+                        android:text="数据同步"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+
+                    <Button
+                        android:id="@+id/data_switch_language"
+                        android:layout_width="180dp"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="50dp"
+                        android:background="@color/colorPrimary"
+                        android:text="切换语言"
+                        android:textColor="@color/white"
+                        binding:onClickCommand="@{viewModel.switchOnClick}"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <include
+                    layout="@layout/video_setting_layout"
+                    android:visibility="@{viewModel.type==1?viewModel.VISIBLE:viewModel.GONE}" />
+
+
+
+
+
+
+
+                <LinearLayout
+                    android:id="@+id/switching_time_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    android:visibility="gone">
+
+                    <ListView
+                        android:id="@+id/switching_time_listview"
+                        android:layout_width="match_parent"
+                        android:layout_height="460dp"
+                        android:background="@drawable/shape_border" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</layout>

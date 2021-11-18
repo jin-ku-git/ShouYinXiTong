@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:background="@color/white"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/F5F5F5"
+        android:padding="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="盘点现金"
+            android:textColor="#9A9A9A"
+            android:textSize="20sp" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="54dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="93dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="22dp"
+                android:gravity="center_vertical|left"
+                android:text="面值: 100"
+                android:textColor="#ff9a9a9a"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/edt_100"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="68.67dp"
+                android:layout_marginRight="28dp"
+                android:gravity="center_vertical|right"
+                android:background="@null"
+                android:inputType="number"
+                android:maxLength="5"
+                android:cursorVisible="true"
+                android:hint="请输入张数"
+                android:textColor="#ff9a9a9a"
+                android:textSize="20sp"
+                />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#ffd8d8d8" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="54dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="93dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="22dp"
+                android:gravity="center_vertical|left"
+                android:text="面值: 50"
+                android:textColor="#ff9a9a9a"
+                android:textSize="20sp"
+                />
+
+            <EditText
+                android:id="@+id/edt_50"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="68.67dp"
+                android:layout_marginRight="28dp"
+                android:gravity="center_vertical|right"
+                android:background="@null"
+                android:inputType="number"
+                android:maxLength="5"
+                android:hint="请输入张数"
+                android:cursorVisible="true"
+                android:textColor="#ff9a9a9a"
+                android:textSize="20sp"
+                />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#ffd8d8d8" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="54dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="93dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="22dp"
+                android:gravity="center_vertical|left"
+                android:text="面值: 20"
+                android:textColor="#ff9a9a9a"
+                android:textSize="20sp"
+                />
+
+            <EditText
+                android:id="@+id/edt_20"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="68.67dp"
+                android:layout_marginRight="28dp"
+                android:gravity="center_vertical|right"
+                android:background="@null"
+                android:inputType="number"
+                android:maxLength="5"
+                android:hint="请输入张数"
+                android:cursorVisible="true"
+                android:textColor="#ff9a9a9a"
+                android:textSize="20sp"
+                />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#ffd8d8d8" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="54dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="93dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="22dp"
+                android:gravity="center_vertical|left"
+                android:text="面值: 10"
+                android:textColor="#ff9a9a9a"
+                android:textSize="20sp"
+                />
+
+            <EditText
+                android:id="@+id/edt_10"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="68.67dp"
+                android:layout_marginRight="28dp"
+                android:gravity="center_vertical|right"
+                android:background="@null"
+                android:inputType="number"
+                android:maxLength="5"
+                android:hint="请输入张数"
+                android:cursorVisible="true"
+                android:textColor="#ff9a9a9a"
+                android:textSize="20sp"
+                />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#ffd8d8d8" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="54dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="93dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="22dp"
+                android:gravity="center_vertical|left"
+                android:text="面值: 5"
+                android:textColor="#ff9a9a9a"
+                android:textSize="20sp"
+                />
+
+            <EditText
+                android:id="@+id/edt_5"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="68.67dp"
+                android:layout_marginRight="28dp"
+                android:gravity="center_vertical|right"
+                android:background="@null"
+                android:inputType="number"
+                android:maxLength="5"
+                android:hint="请输入张数"
+                android:cursorVisible="true"
+                android:textColor="#ff9a9a9a"
+                android:textSize="20sp"
+                />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#ffd8d8d8" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="54dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="93dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="22dp"
+                android:gravity="center_vertical|left"
+                android:text="面值: 1"
+                android:textColor="#ff9a9a9a"
+                android:textSize="20sp"
+                />
+
+            <EditText
+                android:id="@+id/edt_1"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="68.67dp"
+                android:layout_marginRight="28dp"
+                android:gravity="center_vertical|right"
+                android:background="@null"
+                android:inputType="number"
+                android:maxLength="5"
+                android:hint="请输入张数"
+                android:cursorVisible="true"
+                android:textColor="#ff9a9a9a"
+                android:textSize="20sp"
+                />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#ffd8d8d8" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="54dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="93dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="22dp"
+                android:gravity="center_vertical|left"
+                android:text="面值: 0.5"
+                android:textColor="#ff9a9a9a"
+                android:textSize="20sp"
+                />
+
+            <EditText
+                android:id="@+id/edt_0_5"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="68.67dp"
+                android:layout_marginRight="28dp"
+                android:gravity="center_vertical|right"
+                android:background="@null"
+                android:inputType="number"
+                android:maxLength="5"
+                android:hint="请输入张数"
+                android:cursorVisible="true"
+                android:textColor="#ff9a9a9a"
+                android:textSize="20sp"
+                />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#ffd8d8d8" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="54dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="93dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="22dp"
+                android:gravity="center_vertical|left"
+                android:text="面值: 0.1"
+                android:textColor="#ff9a9a9a"
+                android:textSize="20sp"
+                />
+
+            <EditText
+                android:id="@+id/edt_0_1"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="68.67dp"
+                android:layout_marginRight="28dp"
+                android:gravity="center_vertical|right"
+                android:background="@null"
+                android:inputType="number"
+                android:maxLength="5"
+                android:hint="请输入张数"
+                android:cursorVisible="true"
+                android:textColor="#ff9a9a9a"
+                android:textSize="20sp"
+                />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#ffd8d8d8" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="132.67dp"
+        android:background="#F5F5F5">
+
+        <TextView
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="22dp"
+            android:layout_marginTop="13.34dp"
+            android:layout_width="100dp"
+            android:layout_height="28dp"
+            android:text="合计总额:"
+            android:textColor="#ff9a9a9a"
+            android:textSize="20sp"
+            />
+
+        <TextView
+            android:id="@+id/tv_total_cash"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="13.34dp"
+            android:layout_marginRight="34dp"
+            android:gravity="right"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:text="¥0.0"
+            android:textColor="#ffe48013"
+            android:textSize="20sp"
+            />
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="152dp"
+            android:layout_height="38dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="42dp"
+            android:layout_marginBottom="18.67dp"
+            android:text="上一步"
+            android:textColor="#FFFFFF"
+            android:background="#AA9888"/>
+
+        <Button
+            android:id="@+id/btn_confirm"
+            android:layout_width="160dp"
+            android:layout_height="38dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="34dp"
+            android:layout_marginBottom="18.67dp"
+            android:text="交接班并登出"
+            android:textColor="#FFFFFF"
+            android:background="#E48013"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

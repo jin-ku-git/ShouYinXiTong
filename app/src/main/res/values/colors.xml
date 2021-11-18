@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary2">#f25d5f</color>
+    <color name="colorPrimary">#E48013</color>
+    <color name="colorPrimarys">#E48013</color>
+    <color name="colorPrimaryQing">#F4CCA1</color>
+    <color name="colorPrimaryDark">#E48013</color>
+    <color name="colorPrimaryDark2">#f25d5f</color>
+    <color name="colorAccent">#E48013</color>
+    <color name="toolbar_background">#fd2a32</color>
+    <color name="background">#F6F6F6</color>
+    <color name="hint">#e4e4e4</color>
+    <color name="text_black">#000000</color>
+    <!--主色调 紫色-->
+    <color name="main_hue2">#F25D5F</color>
+    <color name="main_hue">#B99E6A</color>
+    <color name="main_hue_click">#80F25D5F</color>
+    <color name="transparent">#00000000</color>
+    <color name="half_transparent">#e0000000</color>
+    <color name="null_gray">#ededed</color>
+
+    <color name="color_f6">#f6f6f6</color>
+
+    <color name="pale_green">#64B6AC</color>
+    <color name="yellow">#FDBA07</color>
+    <color name="spiteColor">#EAEAEA</color>
+    <color name="white">#FFFFFF</color>
+    <color name="green">#179103</color>
+    <color name="font_black"> #2f2f2f</color>
+    <color name="divider">#868E97</color>
+    <!-- 常用颜色 -->
+    <color name="refresh_progress_5">#fd2a32</color>
+    <color name="refresh_progress_4">#3E9215</color>
+    <color name="refresh_progress_3">#1e1d22</color>
+    <color name="refresh_progress_2">#00b0ff</color>
+    <color name="refresh_progress_1">#e91e63</color>
+    <color name="md_grey_700">#616161</color>
+    <color name="md_grey_666">#F6F6F6</color>
+    <color name="gray_dd">#dddddd</color>
+    <!--弹出框-->
+    <color name="default_theme_blue">#3c89ff</color>
+    <color name="blue_3c89ff">#3c89ff</color>
+    <color name="actionsheet_blue">#037BFF</color>
+    <color name="actionsheet">#FE648C</color>
+    <color name="orange_f45607">#f45607</color>
+    <color name="gray_99">#999999</color>
+    <color name="default_green">#8dca7c</color>
+    <color name="gray_a9">#a9a9a9</color>
+    <color name="actionsheet_red">#FD4A2E</color>
+    <color name="actionsheet_gray">#8F8F8F</color>
+    <color name="default_txt_orange">#f48e00</color>
+    <color name="transparents">#00000000</color>
+    <color name="tv_303030">#303030</color>
+    <color name="tv_999999">#999999</color>
+    <color name="color_ffe935">#ffe935</color>
+    <color name="color_ff666666">#666666</color>
+    <color name="default_txt_black">#303030</color>
+    <color name="default_txt_gray">#999999</color>
+    <color name="default_txt_gray_light">#a9a9a9</color>
+    <color name="default_theme_blue_light">#6cbbff</color>
+    <color name="orange_f48e00">#f48e00</color>
+    <color name="default_green_press">#7daa6c</color>
+    <color name="black_30">#303030</color>
+    <color name="black_45">#454545</color>
+    <color name="black_8f">#8F8F8F</color>
+    <color name="default_txt_66">#666666</color>
+    <color name="default_press_black">#33000000</color>
+    <color name="default_dialog_bg">#00ffffff</color>
+    <color name="default_bg">#dbdbdb</color>
+    <color name="orange_f45100">#f45100</color>
+    <color name="orange_eea82e">#eea82e</color>
+    <color name="orange_f4D500">#f4D500</color>
+    <color name="color_DB6D6D">#DB6D6D</color>
+    <color name="color_6DB533">#6DB533</color>
+
+    <color name="red_bf233a">#bf233a</color>
+
+    <color name="color_FAFAFA">#FAFAFA</color>
+    <color name="color_303030">#303030</color>
+    <color name="color_0091FF">#0091FF</color>
+    <color name="color_CD700B">#CD700B</color>
+    <color name="color_6F6F6F">#6F6F6F</color>
+    <color name="color_D8D8D8">#D8D8D8</color>
+    <color name="color_333333">#333333</color>
+    <color name="viewLineColor">#F0F0F0</color>
+
+
+
+
+    <color name="textColor">#202020</color>
+    <color name="textColorHint">#A0A0A0</color>
+    <color name="textColorVice">#6C6C6C</color>
+    <color name="switch_off">#FFB4B4B4</color>
+    <color name="switch_on">#FFE48013</color>
+    <color name="red">#FF0000</color>
+
+</resources>

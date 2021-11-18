@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:binding="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="com.youwu.shouyinxitong.ui.print.PrintSetupViewModel" />
+
+        <variable
+            name="viewModel"
+            type="PrintSetupViewModel" />
+
+    </data>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F6F6F6"
+    tools:context="com.youwu.shouyinxitong.ui.print.PrintSetupActivity"
+    tools:ignore="MissingDefaultResource">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/back"
+            android:layout_marginLeft="20dp"
+            android:layout_width="0dp"
+            android:layout_weight="0.27"
+            android:layout_height="match_parent"
+            android:text="保存设置"
+            android:gravity="center|left"
+            android:textColor="@color/md_grey_700"
+            android:drawableLeft="@mipmap/arrow_left"
+            android:drawablePadding="@dimen/dp_5"
+            android:textSize="18sp"
+            binding:onClickCommand="@{viewModel.finishonClick}"/>
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/level_back"
+            android:layout_marginLeft="70dp"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:src="@mipmap/back_icon"/>
+
+        <TextView
+            android:layout_marginRight="30dp"
+            android:id="@+id/tittle_tv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="打印设置"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textColor="@color/colorPrimary"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:padding="@dimen/dp_20"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="打印机类型："
+            android:textColor="@color/text_black"
+            android:textSize="18sp" />
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/spinner"
+            android:layout_width="230dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:spinnerMode="dropdown" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/test_print"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        android:text="测试打印"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:background="@color/colorPrimary"/>
+
+</LinearLayout>
+</layout>

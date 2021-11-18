@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+
+        <import type="com.youwu.shouyinxitong.ui.applygoods.GoodsConfirmOrderItemViewModel" />
+
+        <variable
+            name="viewModel"
+            type="GoodsConfirmOrderItemViewModel" />
+    </data>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:background="@drawable/shape_border"
+    tools:ignore="MissingDefaultResource">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:text="商品名称"
+                android:gravity="center"
+                android:id="@+id/goods_name"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/sp_14" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:id="@+id/goods_unit"
+        android:text="单位"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:id="@+id/ding_goods_number"
+            android:text="订货数量"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:id="@+id/goods_number"
+            android:text="配货数量"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:visibility="gone"
+            android:layout_width="0dp"
+            android:id="@+id/goods_confirm_number_tv"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:inputType="number|numberDecimal"
+            android:text="收货数量"
+            android:textColor="@color/text_black"
+            android:background="@color/white"
+            android:textSize="@dimen/sp_14" />
+
+        <EditText
+            android:layout_width="0dp"
+            android:id="@+id/goods_confirm_number"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:inputType="number|numberDecimal"
+            android:text="收货数量"
+            android:textColor="@color/text_black"
+            android:background="@color/white"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:id="@+id/ratio_base"
+            android:text="配比"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:id="@+id/goods_difference_number"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="差额数量"
+            android:textColor="@color/main_hue"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:id="@+id/order_price"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="订货单价"
+            android:textColor="@color/main_hue"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:id="@+id/order_all_price"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="订货价格"
+            android:textColor="@color/main_hue"
+            android:textSize="@dimen/sp_14" />
+</LinearLayout>
+</layout>
